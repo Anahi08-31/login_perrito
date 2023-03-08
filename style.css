@@ -1,0 +1,297 @@
+*{
+	box-sizing:border-box;
+}
+
+body{
+	width:100vw;
+	height:100vh;
+	background-color:rgb(41 ,0,71);
+	overflow:hidden;
+	font-size:12px;
+}
+
+.center{
+position:relative;
+top:50%;
+left:50%;
+display:inline-block;
+width:275px;
+height:490px;
+border-radius:3px;
+transform:translate(-50% ,-50%);
+overflow:hidden;
+background-image:url(./fondo.jpg);
+}
+
+@media screen and (max-height:500px){
+	.center{
+		transition:transform 0.5s;
+		transform:translate(-50% .-50%) scale(0.8)
+	}
+}
+
+.center .oreja{
+	position:relative;
+
+	width:200px;
+	height:200px;
+	border-radius:50%;
+
+}
+
+.center .oreja-izquierda{
+	position:absolute;
+	top:-180px;
+	left:-90px;
+	margin-top:100px;
+	background-image:url(./fondo-orejas.jpg);
+}
+
+.center  .oreja-derecha{
+	position:absolute;
+	top:-80px;
+	right:-90px;
+	background-image:url(./fondo-orejas.jpg);
+}
+
+.center .cara{
+	display:flex;
+	flex-direction:colum;
+	align-items:center;
+	width:200px;
+	height:150px;
+	margin: 80px auto 10px;
+	--rotate-head:0deg;
+	transform:rotate(--rotate-head);
+	transition:transform 0.2s;
+	transform-origin:center 20px;
+}
+
+
+.center .ojos{
+	display:inline-block;
+	position:relative;
+	width:25px;
+	height:25px;
+	border-radius:50%;
+}
+
+.ojo--izquierdo{
+	width:40px;
+	height:40px;
+	border-radius:50px;
+	position:absolute;
+    top:10px;
+	left:10px;
+	margin-right:40px;
+	background-color:#000;
+}
+
+.ojo--derecho{
+	width:40px;
+	height:40px;
+	border-radius:50px;
+	margin-left:40px;
+	position:absolute;
+    right:-160px;
+    top:10px;
+    background-color:#000;
+
+}
+
+.center .ojos .glow{
+	position:relative;
+	top:3px;
+	right:-12px;
+	width:12px;
+	height:6px;
+	border-radius:50%;
+	background-color:#fff;
+	transform:rotate(38deg);
+}
+
+.nariz{
+	position:absolute;
+	top:200px;
+    left:120px;
+	transform:scale(1.1);
+
+}
+
+.nariz-glow{
+	position:absolute;
+	top:300px;
+	left:20px;
+	width:15px;
+	height:8px;
+	border-radius:50%;
+	background-color:pink;
+}
+
+.boca {
+	position:relative;
+	top:110px;
+	left:70px;
+}
+
+.center svg.sonrisa {
+	position:absolute;
+	left:-35px;
+	top:-19px;
+	transform:scale(1.1);
+	stroke:#000;
+}
+
+.center .boca-hole{
+	position:absolute;
+	top:0px;
+	left:-20px;
+	width:60px;
+	height:15px;
+	border-radius:50%/100% 100% 0% 0;
+	transform:rotate(180deg);
+	background-color:#000;
+	z-index:-1;
+}
+
+.center .lengua{
+	position:absolute;
+	top:5px;
+	width:30px;
+	height:30px;
+	border-radius:5px;
+	background-color:#ffd7dd;
+	transform-origin:top;
+	transform:rotatex(60deg);
+}
+
+.center .lengua.breath{
+	-webkit-animation:breath 0.3s infinite linear;
+	animation:breath 0.3s infinite linear;
+}
+
+.center .lengua-top{
+	position:absolute;
+	botton:-15px;
+	width:30px;
+	height:30px;
+	border-radius:15px;
+	background-color:#ffd7dd;
+}
+
+.center .linea{
+	position:absolute;
+	top:0px;
+	width:30px;
+	height:25px;
+	background-color:#ffd7dd;
+}
+
+.center .median{
+	position:absolute;
+	top:0;
+	left:50%;
+	transform:translateX(-50%);
+	width:4px;
+	height:25px;
+	border-radius:5px;
+	background-color:#fcb7bf;
+}
+
+
+
+.center .login{
+	position:relative;
+	display:flex;
+	flex-direction:colum;
+}
+
+.center .login label{
+	position:relative;
+	padding:0 20px;
+	top:160px;
+	right:30px;
+}
+
+.center .login label .fa{
+	position:absolute;
+	top:160px;
+	left:1px;
+	color:#bbb;
+}
+
+.password{
+	position:relative;
+	top:40px;
+	right:215px;
+}
+
+.login-button{
+	position:absolute;
+	top:250px;
+	left:50px;
+}
+
+.center .social-buttons .social{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:35px;
+	height:35px;
+	margin:0 10px;
+	border-radius:50%;
+	background-color:#243946;
+	color:#fff;
+	font-size:18px;
+	position:absolute;
+	top:430px;
+	right:200px;
+
+}
+
+.facebook{
+	width:35px;
+	height:35px;
+	position:absolute;
+	left:90px;
+	background-color:#243946;
+	color:#fff;
+	border-radius:50%;
+}
+
+.twitter{
+	width:35px;
+	height:35px;
+	position:absolute;
+	left:180px;
+	background-color:#243946;
+	color:#fff;
+	border-radius:50%;	
+}
+
+.center .social-buttons .social:active{
+	transform:scale(0.95);
+}
+
+.center.footer{
+	text-align:center;
+	margin-top:15px;
+}
+
+@-webkit-keyframes breath{
+	0%,100%{
+		transform:rotatex(0deg);
+	}
+	50%{
+		transform:rotatex(60deg);
+	}
+}
+
+@keyframes breath{
+	0%,100%{
+		transform:rotatex(0deg);
+	}
+	50%{
+		transform:rotatex(60deg);
+	}
+}
